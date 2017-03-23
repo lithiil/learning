@@ -12,24 +12,18 @@ function perfectNumbers($num) {
     $divisors = [];
     $tmpNum = $num;
 
-    if ($num % 2 == 0) {
-
-    while ($tmpNum != 1) {
-
-            $divisor = intval(round($tmpNum / 2));
-            array_push($divisors, $divisor);
-            $tmpNum = $divisor;
-            echo $divisor . PHP_EOL;
-
+    for ($i = 1; $i <= $num; $i++) {
+        if ($tmpNum % $i == 0) {
+            array_push($divisors,$i);
+        }
     }
 
-    } else die("The number is not perfect!");
-
-    if (array_sum($divisors) == $num) {
+    if(array_sum($divisors) / 2 == $num) {
         echo "The number is perfect".PHP_EOL;
     } else {
         echo "The number is not perfect".PHP_EOL;
     }
+
 }
 
 perfectNumbers($num);
