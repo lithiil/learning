@@ -13,22 +13,22 @@ $num = $argv[1];
 function perfectNumbers($num) {
     $time_start = microtime(true);
 
-    $divisors = [];
     $tmpNum = $num;
+    $sumOfDivisors = 0;
 
-    for ($i = 1; $i < $num; $i++) {
+    for ($i = 1; $i <= $num/2; $i++) {
         if ($tmpNum % $i == 0) {
-            array_push($divisors,$i);
+            $sumOfDivisors += $i;
         }
     }
 
     $time_end = microtime(true);
     $time = $time_end - $time_start;
 
-    if(array_sum($divisors) == $num) {
+    if($sumOfDivisors == $num) {
         echo "The number is perfect "."Calculated in ".intval(round($time))." seconds".PHP_EOL;
     } else {
-        echo "The number is not perfect"."Calculated in ".intval(round($time))." seconds".PHP_EOL;
+        echo "The number is not perfect "."Calculated in ".intval(round($time))." seconds".PHP_EOL;
     }
 
 }
