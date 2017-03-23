@@ -8,13 +8,29 @@
 
 $num = $argv[1];
 
-function isPrime($num)
-{
+function isPrime($num) {
 
-    $tmpNum = $num;
+    $numberOfDivisors = 0;
 
-    for ($i = 2; $i <= 10; $i++) {
+    if ($num <= 1) {
+        echo "The number cannot be Prime because it is not greater than 1".PHP_EOL;
+        die();
+    }
 
+    $highestPossibleDivisor = intval($num / 2);
+
+    for ($i = 2; $i <= $highestPossibleDivisor; $i++) {
+        if ($num % $i == 0) {
+            $numberOfDivisors ++;
+            break;
+        }
+    }
+    if ($numberOfDivisors == 0) {
+        echo "The number is prime".PHP_EOL;
+    } else {
+        echo "Number is not prime, it is dividable by $i".PHP_EOL;
 
     }
 }
+
+isPrime($num);
