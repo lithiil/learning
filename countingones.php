@@ -13,6 +13,7 @@ $num = $argv[1];
 function findOnes($num) {
     echo "The number is $num".PHP_EOL;
     $oneCount= 0;
+    $time_start = microtime(true);
 
     while ($num != 0) {
         $lastNum = $num%10;
@@ -24,7 +25,10 @@ function findOnes($num) {
        $num= intval($num/10);
     }
 
-    echo "The number of ones in the number is: $oneCount".PHP_EOL;
+    $time_end = microtime(true);
+    $time = $time_end - $time_start;
+
+    echo "The number of ones in the number is: $oneCount"." Calculated in ".intval($time)." Seconds".PHP_EOL;
 }
 
 findOnes($num);
