@@ -9,7 +9,9 @@
 $num = $argv[1];
 
 
-
+/**
+ * @param $num
+ */
 function perfectNumbers($num) {
     $time_start = microtime(true);
 

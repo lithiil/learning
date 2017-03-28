@@ -18,7 +18,7 @@ class numAnalyzer
             }
         }
 
-        $stringArray = implode(' ',$divisors);
+        $stringArray = implode(',',$divisors);
 
         echo "\e[32m".$num."`s divisors are: ".$stringArray."\e[0m".PHP_EOL;
     }

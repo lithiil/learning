@@ -8,7 +8,7 @@
 
 function mySpecialCount($num = PHP_INT_MAX) {
 
-    echo "Wait while the hamsters count and analyze every number until ".PHP_INT_MAX." ".PHP_EOL;
+    echo "Wait while the hamsters count and analyze every number until ".$num." ".PHP_EOL;
     $countOnes = 0;
     $currNum = 0;
     $numsFound = 0;
