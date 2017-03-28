@@ -12,9 +12,9 @@ function isPrime($num) {
 
     $numberOfDivisors = 0;
 
-    if ($num <= 1) {
-        echo "The number cannot be Prime because it is not greater than 1".PHP_EOL;
-        die();
+    if ($num <= 1 || is_float($num) === false) {
+        echo "The number cannot be Prime, it has to be greater than 1 and whole".PHP_EOL;
+        return;
     }
 
     $highestPossibleDivisor = intval($num / 2);
